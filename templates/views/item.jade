@@ -121,7 +121,7 @@ block content
 					if meta_updatedAt && (!meta_createdAt || meta_createdAt.getTime() !== meta_updatedAt.getTime())
 						.item-details-meta-item
 							span.item-details-meta-label Updated
-							span.item-details-meta-info= moment(meta_updatedAt).format('Do MMM YY h:mm:ssa')
+							span.item-details-meta-info= moment(meta_updatedAt).format('YYYY/M/D hh:mm:ss')
 					else
 						- meta_updatedAt = false
 				if list.tracking.updatedBy

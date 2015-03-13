@@ -34,6 +34,8 @@ mixin column(list, col, item)
 			+column_boolean(value)
 		else if col.type == 'url'
 			+column_link(value, value, true)
+		else if col.type == 'datetime' && col.field
+			+column_datetime(col,item)
 		else
 			+column_basic(value)
 
@@ -55,3 +57,9 @@ mixin column_html(value)
 
 mixin column_basic(value)
 	div.col-value= value
+
+//默认时间格式调整
+mixin column_datetime(col,item)
+	- var format=col.field._formatString
+	- format=format=='Do MMM YYYY hh:mm:ss a'?'YYYY/M/D hh:mm:ss':format
+	div.col-value=col.field.format(item,format)
