@@ -8,7 +8,7 @@ block content
 			
 		.auth-box-col
 			if user
-				p.lead Hi #{user.name.first},
+				p.lead Hi #{user.phone},
 				p.lead You're already signed in.
 				.toolbar
 					if user.isAdmin
@@ -19,10 +19,10 @@ block content
 				form(method="post", novalidate).auth-form
 					input(type='hidden', name=csrf_token_key, value=csrf_token_value)
 					.form-group
-						label(for='email') Email
-						input(type='email', name='email', id='email', value=submitted.email).form-control
+						label(for='phone') 手机号
+						input(type='text', name='phone', id='phone', value=submitted.phone).form-control
 					.form-group
-						label(for='password') Password
+						label(for='password') 密码
 						input(type='password', name='password', id='password').form-control
 					
 					button(type='submit').btn.btn-primary Sign In

@@ -19,8 +19,8 @@ exports = module.exports = function(req, res) {
 			return renderView();
 		}
 		
-		if (!req.body.email || !req.body.password) {
-			req.flash('error', '邮箱和密码不对，请重新输入');
+		if (!req.body.phone || !req.body.password) {
+			req.flash('error', '手机号和密码不对，请重新输入');
 			return renderView();
 		}
 		
@@ -42,7 +42,7 @@ exports = module.exports = function(req, res) {
 		};
 
 		var onFail = function() {
-			req.flash('error', 'Sorry, that email and password combo are not valid.');
+			req.flash('error', '手机号和密码不匹配！');
 			renderView();
 		};
 
