@@ -1,11 +1,17 @@
-.field(class='type-' + field.type, data-field-type=field.type, data-field-path=field.path, data-field-collapse=field.collapse ? 'true' : false, data-field-depends-on=field.dependsOn, data-field-noedit=field.noedit ? 'true' : 'false')
+.field(class='faustcplusWrap type-' + field.type, data-field-type=field.type, data-field-path=field.path, data-field-collapse=field.collapse ? 'true' : false, data-field-depends-on=field.dependsOn, data-field-noedit=field.noedit ? 'true' : 'false')
 	label.field-label= field.label
-	- var value = field.format(item)
-	- var genHtml=field.options.genHtml||''
+	- var value = field.format(item);
 	.field-ui(class='width-' + field.width)
 		if field.noedit
 			.field-value= value
 		else
-			input(type='text', name=field.path, value=value, autocomplete='off').form-control
+			input(class='faustcplusInput',type='text', name=field.path, value=value, autocomplete='off').form-control
 		if field.note
 			.field-note!= field.note
+		if field.options.isFaustcplus
+			.field-faustcplus.faustcplusBox
+				#Faustcplus.faustcplus-img-box(data-img=value)
+					img(src=value,width='100',height='100')
+					.faustcplus-text 点击上传
+				
+				
