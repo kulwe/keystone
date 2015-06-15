@@ -3,7 +3,6 @@ var keystone = require('../../'),
 	async = require('async');
 
 exports = module.exports = function(req, res) {
-	
 	var itemQuery = req.list.model.findById(req.params.item);
 	
 	if (req.list.tracking && req.list.tracking.createdBy) {
@@ -174,7 +173,6 @@ exports = module.exports = function(req, res) {
 				req.flash('error', 'There was a problem with your request, please try again.');
 				return renderView();
 			}
-			
 			item.getUpdateHandler(req).process(req.body, { flashErrors: true, logErrors: true }, function(err) {
 				if (err) {
 					return renderView();
