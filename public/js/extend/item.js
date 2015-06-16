@@ -29,7 +29,7 @@ jQuery(function(){
 			"showBrow": true,
 			"showCame": false,
 			"uploadSrc": false,
-			"pSize": '300|300|150|150',//前2个参数为裁剪窗口大小
+			"pSize": '300|300|300|300',//前2个参数为裁剪窗口大小
 			"uploadUrl": '/keystone/upload',
 			"jslang":function(){
 				return{
