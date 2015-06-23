@@ -39,7 +39,7 @@ html
 					if signout
 						ul.nav.navbar-nav.navbar-right
 							li.divider
-							li: a(href=signout).signout Sign Out
+							li: a(href=signout).signout 退出
 					ul.nav.navbar-nav
 						each navSection in nav.sections
 							if navSection.lists[0].external
@@ -137,16 +137,4 @@ html
 		//kule增强
 		script(src='http://libs.useso.com/js/swfobject/2.2/swfobject.min.js')
 		script(src='/keystone/js/extend/item.js')
-		
-		//- Page Scripts
 		block js
-
-		//- Google Analytics
-		if env == 'production' && ga.property && ga.domain
-			script.
-				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-				ga('create', '#{ga.property}', '#{ga.domain}');
-				ga('send', 'pageview');

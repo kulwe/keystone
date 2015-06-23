@@ -49,7 +49,7 @@ block js
 block intro
 	.item-toolbar.item-toolbar--header
 		ul.item-breadcrumbs
-			li: a(href=js, title='Search #{list.plural}').js-itemsearch-open: span.ion-search
+			li: a(href=js, title='搜索 #{list.plural}').js-itemsearch-open: span.ion-search
 			if drilldown && drilldown.items.length
 				each d in drilldown.items
 					if d.items

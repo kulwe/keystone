@@ -2,7 +2,7 @@ extends ../layout/base
 
 block intro
 	.page-header
-		h1 Manage
+		h1 管理
 
 block content
 	.keystone-lists
@@ -26,6 +26,6 @@ block content
 						li: a(href=path)= list.label
 			if orphanedLists.length
 				.nav-section
-					h4 Other
+					h4 其他
 					ul: each list in orphanedLists
 						li: a(href='/keystone/' + list.path)= list.label
