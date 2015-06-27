@@ -39,7 +39,13 @@ block js
 		script(src='/keystone/js/lib/tinymce/tinymce.min.js')
 		script(src='/keystone/js/lib/tinymce/jquery.tinymce.min.js')
 		script(src="/keystone/js/common/ui-wysiwyg.js")
-	
+
+	//二维码支持
+	script(src='/js/lib/modernizr.custom.js')
+	//script(src='/js/lib/fancybox/jquery.fancybox.js')
+	script(src='/js/lib/qrcode.js')
+	script(src='/js/lqQrcode.js')
+		
 	script(src='/keystone/js/views/item.js')
 	script.
 		Keystone.list = { path: "#{list.path}" };

@@ -34,7 +34,6 @@ exports = module.exports = function(req, res) {
 				keystone.get('signin redirect')(user, req, res);
 			} else if(checkCustomAndRedirect(req,res)){
 				//普通用户跳转到首页
-				//res.redirect('/');
 			} else{
 				res.redirect('/keystone');
 			}
@@ -58,7 +57,7 @@ exports = module.exports = function(req, res) {
 
 function checkCustomAndRedirect(req,res){
 	if(req.user&&req.user.role===0){
-		res.redirect('/')
+		res.redirect('/query/')
 		return true;
 	}
 	return false;
