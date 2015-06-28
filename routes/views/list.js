@@ -113,7 +113,6 @@ exports = module.exports = function(req, res) {
 			var compileFields = function(item, callback) { item.compile('initial', callback); };
 			
 			async.eachSeries(req.list.initialFields, compileFields , function() {
-				
 				keystone.render(req, res, 'list', _.extend(viewLocals, {
 					section: keystone.nav.by.list[req.list.key] || {},
 					title: 'Keystone: ' + req.list.plural,
@@ -128,7 +127,7 @@ exports = module.exports = function(req, res) {
 					colPaths: _.pluck(columns, 'path'),
 					items: items,
 					submitted: req.body || {},
-					query: req.query
+					query: _.clone(req.query)
 				}));
 				
 			});

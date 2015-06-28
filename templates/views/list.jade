@@ -21,16 +21,15 @@ block js
 	script(src='/keystone/js/views/list.js')
 	script(src='/keystone/js/lib/browserified/querystring.js')
 	script(src='/keystone/js/lib/browserified/queryfilter.js')
-	script.
+	script(type='text/javascript').
 		Keystone.list = { path: "#{list.path}", label: "#{list.label}", singular: "#{list.singular}", plural: "#{list.plural}", cols: !{JSON.stringify(colPaths)}, perPage: !{ Number(list.perPage) || 50 } };
 		Keystone.wysiwyg = { options: !{JSON.stringify(wysiwygOptions)} };
-		Keystone.items = !{ JSON.stringify(items) };
+		Keystone.items = !{JSON.stringify(items)};
 		Keystone.search = "#{search}";
-		Keystone.filters = !{ JSON.stringify(filters) };
+		Keystone.filters = !{JSON.stringify(filters)};
 		Keystone.sort = "#{sort.by}";
 		Keystone.query = "#{query}";
 		Keystone.csrf_query = "!{csrf_query}";
-			
 block content
 	//-
 	//- Create Item

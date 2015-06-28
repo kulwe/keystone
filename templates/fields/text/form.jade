@@ -1,6 +1,9 @@
 .field(class='faustcplusWrap type-' + field.type, data-field-type=field.type, data-field-path=field.path, data-field-collapse=field.collapse ? 'true' : false, data-field-depends-on=field.dependsOn, data-field-noedit=field.noedit ? 'true' : 'false')
 	label.field-label= field.label
 	- var value = field.format(item);
+	- var formExtra=field.options.formExtra;
+	-	typeof formExtra=='function'&&(formExtra=formExtra(item));
+	
 	.field-ui(class='width-' + field.width)
 		if field.noedit
 			.field-value= value
@@ -12,5 +15,5 @@
 			.field-faustcplus.faustcplusBox
 				#Faustcplus.faustcplus-img-box(data-img=value)
 					.faustcplus-text 点击上传
-				
-				
+		if formExtra
+			.field-form-extra!=formExtra

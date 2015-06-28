@@ -1,5 +1,8 @@
 .field(class='faustcplusWrap type-' + field.type)
 	label.field-label= field.label
+	- var initialExtra=field.options.initialExtra;
+	-	typeof initialExtra=='function'&&(initialExtra=initialExtra());
+	
 	.field-ui(class='width-' + field.width)
 		input(class='faustcplusInput',type='text', name=field.path, value=item[field.path] || field.options.default, autocomplete='off').form-control
 		if field.note
@@ -8,3 +11,5 @@
 			.field-faustcplus.faustcplusBox
 				#Faustcplus.faustcplus-img-box(data-img=value)
 					.faustcplus-text 点击上传
+		if initialExtra
+			.field-initial-extra!=initialExtra

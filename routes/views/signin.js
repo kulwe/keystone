@@ -57,7 +57,7 @@ exports = module.exports = function(req, res) {
 
 function checkCustomAndRedirect(req,res){
 	if(req.user&&req.user.role===0){
-		res.redirect('/query/')
+		res.redirect('/mhome/')
 		return true;
 	}
 	return false;

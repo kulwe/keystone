@@ -15,3 +15,12 @@
 	background-color:rgba(0,0,0,.1);
 	bottom: 0;
 }
+
+.fancybox-title.fancybox-title-float-wrap{
+	bottom:-46px;
+}
+form.item-details .item-name .form-control[name="wxurl"]{
+	float:left;
+	margin-right:10px;
+	width:calc(100% - 80px);
+}
